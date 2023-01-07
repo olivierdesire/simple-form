@@ -6,9 +6,14 @@ import Footer from "./components/Footer";
 
 function App() {
   const [choice, setChoice] = useState(true);
+  const name = "";
   return (
     <div className="App">
-      {choice ? <Form choice={choice} setChoice={setChoice} /> : <StepTwo />}
+      {choice ? (
+        <Form choice={choice} setChoice={setChoice} name={name} />
+      ) : (
+        <StepTwo choice={choice} setChoice={setChoice} name={name} />
+      )}
       <Footer />
     </div>
   );

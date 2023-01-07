@@ -1,9 +1,13 @@
+import { useState } from "react";
+
 const Form = (props) => {
+
+  const [props.name, setName] = useState("");
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        props.choice ? (props.setChoice = false) : (props.setChoice = true);
+        props.choice && props.setChoice(false);
       }}
     >
       <p>Create account</p>
@@ -12,7 +16,10 @@ const Form = (props) => {
         type="text"
         placeholder="Jean Dupont"
         id="name"
-        value={props.value}
+        value={props.name}
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
       />
       <label htmlFor="email">Email</label>
       <input type="text" placeholder="jeandupont@lereacteur.io" id="email" />
