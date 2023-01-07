@@ -8,7 +8,7 @@ function App() {
   const [choice, setChoice] = useState(true);
   return (
     <div className="App">
-      {choice ? <Form /> : <StepTwo />}
+      {choice ? <Form choice={choice} setChoice={setChoice} /> : <StepTwo />}
       <Footer />
     </div>
   );
