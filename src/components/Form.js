@@ -1,6 +1,11 @@
 const Form = (props) => {
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        props.choice ? (props.setChoice = false) : (props.setChoice = true);
+      }}
+    >
       <p>Create account</p>
       <label htmlFor="name">Name</label>
       <input
@@ -15,13 +20,7 @@ const Form = (props) => {
       <input type="text" placeholder="lErEaCtEuR2020" id="password" />
       <label htmlFor="confirm-password">Confirm your password</label>
       <input type="text" placeholder="lErEaCtEuR2020" id="confirm-password" />
-      <button
-        onClick={() => {
-          props.choice ? (props.setChoice = false) : (props.setChoice = true);
-        }}
-      >
-        Register
-      </button>
+      <button>Register</button>
     </form>
   );
 };
